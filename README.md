@@ -6,4 +6,8 @@
 
 #### | javascript设计模式理解与应用
 
-- [x] []()
+- [x] [面向对象的理解](doc/design-for-object/面向对象的理解.md)
+
+  ###### | 创建型设计模式
+  
+- [x] [面向对象的理解](doc/design-for-object/面向对象的理解.md)
