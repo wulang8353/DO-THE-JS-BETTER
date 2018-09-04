@@ -11,7 +11,11 @@
 
   ###### | 创建型设计模式
   
-- [x] [面向对象的理解](docs/design-for-object/面向对象的理解.md)
+- [x] [工厂模式](docs/design-for-object/工厂模式.md)
+
+#### | 提升开发效率的一些小方面
+
+- [x] [npm命令与插件推荐](docs/tiny/工厂模式.md)
 
 
 参考
