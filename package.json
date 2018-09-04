@@ -1,0 +1,28 @@
+{
+  "name": "do-the-js-better",
+  "version": "1.0.0",
+  "description": ":clap: 为了更好的自己，不得不系列之——JS:sunny:",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "make": "github-markdown-css > github-markdown.css"
+  },
+  "files": [
+    "github-markdown.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulang8353/DO-THE-JS-BETTER.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wulang8353/DO-THE-JS-BETTER/issues"
+  },
+  "homepage": "https://github.com/wulang8353/DO-THE-JS-BETTER#readme",
+  "dependencies": {
+    "github-markdown-css": "^2.10.0"
+  }
+}
