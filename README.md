@@ -6,8 +6,14 @@
 
 #### | javascript设计模式理解与应用
 
+
 - [x] [面向对象的理解](docs/design-for-object/面向对象的理解.md)
 
   ###### | 创建型设计模式
   
 - [x] [面向对象的理解](docs/design-for-object/面向对象的理解.md)
+
+
+参考
+
+![YOU-SHOULD-KNOW-JS](https://github.com/Nealyang/YOU-SHOULD-KNOW-JS)
