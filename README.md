@@ -13,26 +13,27 @@
 - [x] [单例模式](docs/design-for-object/单例模式.md)
 - [x] [原型模式](docs/design-for-object/原型模式.md)
 
-  <!-- ###### | 结构型设计模式
-- [] [外观模式](./design-for-object/外观模式.md)
-- [] [适配器模式](./design-for-object/适配器模式.md)
-- [] [代理模式](./design-for-object/代理模式.md)
+###### | 结构型设计模式
+- [x] [适配器模式](./design-for-object/适配器模式.md)
+<!-- 
 - [] [装饰者模式](./design-for-object/装饰着模式.md)
+- [] [代理模式](./design-for-object/代理模式.md)
+- [] [外观模式](./design-for-object/外观模式.md)
 - [] [桥接模式](./design-for-object/桥接模式.md)
 - [] [组合模式](./design-for-object/组合模式.md)
 - [] [享元模式](./design-for-object/享元模式.md)
   
   ###### | 行为型设计模式
-- [] [迭代器模式](./design-for-object/迭代器模式.md)
 - [] [观察者模式](./design-for-object/观察者模式.md)
+- [] [迭代器模式](./design-for-object/迭代器模式.md)
 - [] [状态模式](./design-for-object/状态模式.md)
 - [] [策略模式](./design-for-object/策略模式.md)
-- [] [职责链模式](./design-for-object/职责链模式.md)
-- [] [命令模式](./design-for-object/命令模式.md)
-- [] [访问者模式](./design-for-object/访问者模式.md)
-- [] [中介者模式](./design-for-object/中介者模式.md)
-- [] [备忘录模式](./design-for-object/备忘录模式.md)
 - [] [模板方法模式](./design-for-object/模板方法模式.md)
+- [] [命令模式](./design-for-object/命令模式.md)
+- [] [备忘录模式](./design-for-object/备忘录模式.md)
+- [] [中介者模式](./design-for-object/中介者模式.md)
+- [] [访问者模式](./design-for-object/访问者模式.md)
+- [] [职责链模式](./design-for-object/职责链模式.md)
 - [] [解释器模式](./design-for-object/解释器模式.md) -->
 
 #### | es6 回想起曾经翻烂红宝书的时候
