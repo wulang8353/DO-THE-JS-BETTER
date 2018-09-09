@@ -290,3 +290,114 @@ n // { a: 3, b: 4 }
 ![Symbol](./img/Symbol.png)
 
 </div>
+
+### Set、Map
+
+<div align=center>
+
+![set](./img/set.png)
+
+![map](./img/map.png)
+
+</div>
+
+```javascript
+/* Set */
+// 可以接受数组或者类数组作为参数初始化
+let s = new Set();
+
+// add()
+[1, 2, 3, 4, 3, 2, 1].forEach(x => s.add(x));
+
+console.log(s.size); // 4
+
+// delete()
+let isDeleted = s.delete(4);
+console.log(isDeleted); // true
+
+// has()
+let hasFour = s.has(4);
+console.log(hasFour); // false
+
+// Set -> Array
+// 方法一
+let a = [...s]; // [ 1, 2, 3 ]
+// 方法二
+let b = Array.from(s); // [ 1, 2, 3 ]
+
+// 遍历
+// 因为 Set 的 key 和 value 可以看做一致
+let set = new Set(['red', 'green', 'blue']);
+
+for (let item of s.keys()) {
+  console.log(item);
+}
+for (let item of s.values()) {
+  console.log(item);
+}
+// red
+// green
+// blue
+
+for (let item of s.entries()) {
+  console.log(item);
+}
+// ["red", "red"]
+// ["green", "green"]
+// ["blue", "blue"]
+
+// clear
+s.clear();
+console.log(s.size); // 0
+
+/* Map */
+// Map 可以接受一个数组作为参数
+// 该数组的成员是一个个表示键值对的数组
+let m = new Map([
+  ['a', 1],
+  ['b', 2]
+]);
+
+// set
+m.set('c', 3);
+
+// get
+console.log(m.get('a')); // 1
+console.log(m.get('d')); // undefined
+
+// delete
+let isDeleted = m.delete('a');
+console.log(isDeleted); // true
+
+// has
+console.log(m.has('a')); // false
+
+console.log(m.size); // 2
+
+// 遍历
+for (let item of m.entries()) {
+  console.log(item);
+}
+// [ 'b', 2 ]
+// [ 'c', 3 ]
+
+const items = [
+  ['name', '张三'],
+  ['title', 'Author']
+];
+const map = new Map();
+items.forEach(
+  ([key, value]) => map.set(key, value)
+);
+
+// Map -> Array
+console.log([...map])
+// [ [ 'name', 张三 ],
+//   [ 'title', Author ] ]
+
+console.log([...m.keys()]);
+// [ 'name', 'title']
+
+console.log([...m.values()]);
+// [ 张三, Author]
+```
