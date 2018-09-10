@@ -401,3 +401,87 @@ console.log([...m.keys()]);
 console.log([...m.values()]);
 // [ 张三, Author]
 ```
+
+### Proxy、Reflect
+
+<div align=center>
+
+![proxy](./img/proxy.png)
+
+</div>
+
+### Promise 对象
+
+<div align=center>
+
+![promise](./img/promise.png)
+
+</div>
+
+```javascript
+// 链式操作
+let ajax=()=>{
+  return new Promise((resolve,reject)=>{
+    setTimeout( ()=> {
+      resolve()
+    }, 1000);
+  })
+};
+
+ajax()
+  .then(()=>{
+  return new Promise((resolve,reject)=>{
+    setTimeout( () => {
+      resolve()
+    }, 1000);
+  });
+  })
+  .then(()=>{
+  console.log('timeout'); 
+})
+
+// 事件一的结果作为事件二的参数
+let async1 = () => {
+  let p1 = new Promise((resolve, reject) => {
+    resolve(1);
+  });
+  return p1;
+};
+
+// first 为前次异步操作的返回值
+let async2 = (first) => {
+  let p2 = new Promise((resolve, reject) => {
+    resolve(first + 2);
+  });
+  return p2;
+};
+
+async1().then(data => {
+  return async2(data);
+}).then(data => console.log(data)); // 3
+
+ // 所有图片加载完再添加到页面
+function loadImg(src){
+  return new Promise((resolve,reject)=>{
+    let img=document.createElement('img');
+    img.src=src;
+    img.onload=function(){
+      resolve(img);
+    }
+    img.onerror=function(err){
+      reject(err);
+    }
+  })
+}
+function showImgs(imgs){
+  imgs.forEach(function(img){
+    document.body.appendChild(img);
+  })
+}
+
+Promise.all([
+  loadImg('http://www.baidu.com/1.png'),
+  loadImg('http://www.baidu.com/2.png'),
+  loadImg('http://www.baidu.com/3.png')
+]).then(showImgs)
+```
