@@ -6,7 +6,7 @@
 
 <div align=center>
 
-![bind](./img/let-const.png)
+![let-const](./img/let-const.png)
 
 </div>
 
@@ -14,7 +14,7 @@
 
 <div align=center>
 
-![bind](./img/解构赋值.png)
+![解构赋值](./img/解构赋值.png)
 
 </div>
 
@@ -22,7 +22,7 @@
 
 <div align=center>
 
-![bind](./img/字符串扩展.png)
+![字符串扩展](./img/字符串扩展.png)
 
 </div>
 
@@ -30,7 +30,7 @@
 
 <div align=center>
 
-![bind](./img/数值扩展.png)
+![数值扩展](./img/数值扩展.png)
 
 </div>
 
@@ -38,7 +38,7 @@
 
 <div align=center>
 
-![bind](./img/函数扩展.png)
+![函数扩展](./img/函数扩展.png)
 
 </div>
 
@@ -193,6 +193,211 @@ fibonacci(5) // 8
 
 <div align=center>
 
-![bind](./img/数组扩展.png)
+![数组扩展](./img/数组扩展.png)
 
 </div>
+
+### 对象扩展
+
+<div align=center>
+
+![对象扩展](./img/对象扩展.png)
+
+</div>
+
+```javascript
+
+/* 对象扩展 - 属性简洁表示法 */ 
+let a=1;
+let b=2;
+let es5={
+  a:a,
+  b:b
+};
+let es6={
+  a,
+  b
+};
+console.log(es5,es6); // ​​​​​{ a: 1, b: 2 } { a: 1, b: 2 }​​​​​
+
+let es5_method={
+  hello:function(){
+    console.log('hello');
+  }
+};
+let es6_method={
+  hello(){
+    console.log('hello');
+  }
+};
+console.log(es5_method.hello(),es6_method.hello());
+
+/* 对象扩展 - Object.is() */ 
+console.log(Object.is('foo','foo'),'foo'==='foo'); // true true​​​​​
+console.log(Object.is(+0,-0),+0===-0); // ​​​​​false true
+console.log(Object.is(NaN,NaN),NaN===NaN); // ​​​​​true false​​​​​
+
+/* 对象扩展 - Object.assign() */ 
+const target = { a: 1, b: 1 };
+const source1 = { b: 2, c: 2 };
+const source2 = { c: 3 };
+Object.assign(target, source1, source2);
+target // {a:1, b:2, c:3}
+
+// undefined和null无法转成对象
+Object.assign(undefined) // 报错
+Object.assign(null) // 报错
+
+//  Object.assign 拷贝源对象自身属性+可枚举
+Object.assign({b: 'c'},
+  Object.defineProperty({}, 'invisible', {
+    enumerable: false,
+    value: 'hello'
+  })
+) // { b: 'c' }
+
+// 完整克隆一个对象
+function clone1(obj) {
+  const clone = Object.assign(
+    Object.create(Object.getPrototypeOf(obj)),
+    obj
+  );
+  return clone
+}
+
+function clone2(obj) {
+  // create 第一个参数是对象的原型，第二参数是描述对象
+  const clone = Object.create(
+    Object.getPrototypeOf(obj),
+    Object.getOwnPropertyDescriptors(obj)
+  )
+  return clone
+}
+
+// 数组视为对象处理
+Object.assign([1, 2, 3], [4, 5]) // [4, 5, 3]
+
+// 扩展运算符： 取出参数对象的所有可遍历属性，拷贝到当前对象之中。
+let z = { a: 3, b: 4 };
+let n = { ...z };
+n // { a: 3, b: 4 }
+```  
+
+### Symbol
+
+<div align=center>
+
+![Symbol](./img/Symbol.png)
+
+</div>
+
+### Set、Map
+
+<div align=center>
+
+![set](./img/set.png)
+
+![map](./img/map.png)
+
+</div>
+
+```javascript
+/* Set */
+// 可以接受数组或者类数组作为参数初始化
+let s = new Set();
+
+// add()
+[1, 2, 3, 4, 3, 2, 1].forEach(x => s.add(x));
+
+console.log(s.size); // 4
+
+// delete()
+let isDeleted = s.delete(4);
+console.log(isDeleted); // true
+
+// has()
+let hasFour = s.has(4);
+console.log(hasFour); // false
+
+// Set -> Array
+// 方法一
+let a = [...s]; // [ 1, 2, 3 ]
+// 方法二
+let b = Array.from(s); // [ 1, 2, 3 ]
+
+// 遍历
+// 因为 Set 的 key 和 value 可以看做一致
+let set = new Set(['red', 'green', 'blue']);
+
+for (let item of s.keys()) {
+  console.log(item);
+}
+for (let item of s.values()) {
+  console.log(item);
+}
+// red
+// green
+// blue
+
+for (let item of s.entries()) {
+  console.log(item);
+}
+// ["red", "red"]
+// ["green", "green"]
+// ["blue", "blue"]
+
+// clear
+s.clear();
+console.log(s.size); // 0
+
+/* Map */
+// Map 可以接受一个数组作为参数
+// 该数组的成员是一个个表示键值对的数组
+let m = new Map([
+  ['a', 1],
+  ['b', 2]
+]);
+
+// set
+m.set('c', 3);
+
+// get
+console.log(m.get('a')); // 1
+console.log(m.get('d')); // undefined
+
+// delete
+let isDeleted = m.delete('a');
+console.log(isDeleted); // true
+
+// has
+console.log(m.has('a')); // false
+
+console.log(m.size); // 2
+
+// 遍历
+for (let item of m.entries()) {
+  console.log(item);
+}
+// [ 'b', 2 ]
+// [ 'c', 3 ]
+
+const items = [
+  ['name', '张三'],
+  ['title', 'Author']
+];
+const map = new Map();
+items.forEach(
+  ([key, value]) => map.set(key, value)
+);
+
+// Map -> Array
+console.log([...map])
+// [ [ 'name', 张三 ],
+//   [ 'title', Author ] ]
+
+console.log([...m.keys()]);
+// [ 'name', 'title']
+
+console.log([...m.values()]);
+// [ 张三, Author]
+```

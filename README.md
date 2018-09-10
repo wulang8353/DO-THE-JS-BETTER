@@ -14,9 +14,9 @@
 - [x] [原型模式](docs/design-for-object/原型模式.md)
 
 ###### | 结构型设计模式
-- [x] [适配器模式](docs/design-for-object/适配器模式.md)
+- [x] [适配器模式](./design-for-object/适配器模式.md)
+- [x] [装饰者模式](./design-for-object/装饰着模式.md)
 <!-- 
-- [] [装饰者模式](./design-for-object/装饰着模式.md)
 - [] [代理模式](./design-for-object/代理模式.md)
 - [] [外观模式](./design-for-object/外观模式.md)
 - [] [桥接模式](./design-for-object/桥接模式.md)
