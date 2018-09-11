@@ -13,7 +13,7 @@
 - [x] [单例模式](docs/design-for-object/单例模式.md)
 - [x] [原型模式](docs/design-for-object/原型模式.md)
 
-###### | 结构型设计模式
+  ###### | 结构型设计模式
 - [x] [适配器模式](./design-for-object/适配器模式.md)
 - [x] [装饰者模式](./design-for-object/装饰着模式.md)
 <!-- 
@@ -39,23 +39,37 @@
 #### | es6 回想起曾经翻烂红宝书的时候
 
 - [x] [let、const](docs/es6/es6.md)
+
 - [x] [解构赋值](docs/es6/es6.md)
+
 - [x] [字符串扩展](docs/es6/es6.md)
+
 - [x] [数值扩展](docs/es6/es6.md)
+
 - [x] [数组扩展](docs/es6/es6.md)
+
 - [x] [函数扩展](docs/es6/es6.md)
+
 - [x] [对象扩展](docs/es6/es6.md)
+
 - [x] [Symbol](docs/es6/es6.md)
+  
 - [x] [Set 和 Map 数据结构](docs/es6/es6.md)
+
 - [x] [Proxy 和 Reflect](docs/es6/es6.md)
+
 - [x] [Promise对象](docs/es6/es6.md)
+
 - [x] [Iterator和for...of循环](docs/es6/es6.md)
-- [x] [Generator和Async函数](docs/es6/es6.md)
+
+- [x] [异步编程：Generator和Async](docs/es6/es6.md)
+
 - [x] [Class](docs/es6/es6.md)
 
 #### | 提升开发效率的一些小方面
 
 - [x] [npm命令与插件推荐](docs/tiny/npm命令与插件推荐.md)
+
 - [x] [详解了下bind的polyfill](docs/tiny/bind的polyfill.md)
 
 参考
