@@ -1,13 +1,24 @@
 # DO-THE-JS-BETTER
 :clap: 为了更好的自己，不得不系列之——JS:sunny:
 
-> Focus on concepts and function，not syntax. 关注概念和用途，而非语法
+> 纵然这世上万般不好，难道知识也不好么？
 
-#### | javascript基础知识强化 :bamboo:
+#### | javascript基础知识强化 :cyclone:
 
-- [x] [数据类型转换解析——要多深有多深](docs/basic/数据类型转换.md)
+*爱自己，是终生浪漫的开始* 
 
-#### | javascript设计模式理解与应用 :heavy_check_mark:
+- [x] [数据类型转换解析](docs/basic/数据类型转换.md)
+  
+#### | javascript进阶知识梳理 :cyclone:
+
+*你这么可爱，被大风吹到我怀里，我是不会还的！* 
+
+- [x] [数据类型转换解析](docs/basic/数据类型转换.md)
+  
+
+#### | javascript设计模式理解与应用 :dart:
+
+*如果你不珍惜我，那过了这个村，我在下个村等你哦！* 
 
 - [x] [面向对象的理解](docs/design-for-object/面向对象的理解.md)
 
@@ -40,7 +51,9 @@
 - [] [职责链模式](./design-for-object/职责链模式.md)
 - [] [解释器模式](./design-for-object/解释器模式.md) -->
 
-#### | es6 回想起曾经翻烂红宝书的时候 :heavy_check_mark:
+#### | es6 回想起曾经翻烂红宝书的时候 :dart:
+
+*我要做你的情敌，比比看谁更爱你*
 
 - [x] [let、const](docs/es6/es6.md)
 
@@ -70,12 +83,11 @@
 
 - [x] [Class](docs/es6/es6.md)
 
-#### | 提升开发效率的一些小方面
+#### | 提升开发效率的一些小方面 :cyclone:
+
+*觉得你就是在害我，害的我好喜欢你*
 
 - [x] [npm命令与插件推荐](docs/tiny/npm命令与插件推荐.md)
 
 - [x] [详解了下bind的polyfill](docs/tiny/bind的polyfill.md)
 
-参考
-
-![YOU-SHOULD-KNOW-JS](https://github.com/Nealyang/YOU-SHOULD-KNOW-JS)
