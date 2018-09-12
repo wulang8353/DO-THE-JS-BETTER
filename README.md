@@ -3,7 +3,11 @@
 
 > Focus on concepts and function，not syntax. 关注概念和用途，而非语法
 
-#### | javascript设计模式理解与应用
+#### | javascript基础知识强化 :bamboo:
+
+- [x] [数据类型转换解析——要多深有多深](docs/basic/数据类型转换.md)
+
+#### | javascript设计模式理解与应用 :heavy_check_mark:
 
 - [x] [面向对象的理解](docs/design-for-object/面向对象的理解.md)
 
@@ -13,7 +17,7 @@
 - [x] [单例模式](docs/design-for-object/单例模式.md)
 - [x] [原型模式](docs/design-for-object/原型模式.md)
 
-  ###### | 结构型设计模式
+  ###### | 结构型设计模式 
 - [x] [适配器模式](./design-for-object/适配器模式.md)
 - [x] [装饰者模式](./design-for-object/装饰着模式.md)
 <!-- 
@@ -36,7 +40,7 @@
 - [] [职责链模式](./design-for-object/职责链模式.md)
 - [] [解释器模式](./design-for-object/解释器模式.md) -->
 
-#### | es6 回想起曾经翻烂红宝书的时候
+#### | es6 回想起曾经翻烂红宝书的时候 :heavy_check_mark:
 
 - [x] [let、const](docs/es6/es6.md)
 
