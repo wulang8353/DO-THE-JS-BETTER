@@ -1,5 +1,4 @@
 # DO-THE-JS-BETTER
-:clap: 为了更好的自己，不得不系列之——JS:sunny:
 
 > 纵然这世上万般不好，难道知识也不好么？
 
@@ -18,7 +17,7 @@
 
 #### | javascript设计模式理解与应用 :dart:
 
-*如果你不珍惜我，那过了这个村，我在下个村等你哦！* 
+*如果你不珍惜我，那过了这个村，我在下个村等你！* 
 
 - [x] [面向对象的理解](docs/design-for-object/面向对象的理解.md)
 
@@ -29,8 +28,8 @@
 - [x] [原型模式](docs/design-for-object/原型模式.md)
 
   ###### | 结构型设计模式 
-- [x] [适配器模式](./design-for-object/适配器模式.md)
-- [x] [装饰者模式](./design-for-object/装饰着模式.md)
+- [x] [适配器模式](docs/design-for-object/适配器模式.md)
+- [x] [装饰者模式](docs/design-for-object/装饰着模式.md)
 <!-- 
 - [] [代理模式](./design-for-object/代理模式.md)
 - [] [外观模式](./design-for-object/外观模式.md)
