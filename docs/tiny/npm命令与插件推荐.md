@@ -44,7 +44,7 @@
 
 图中显示了package.json文件中未使用、已使用可以更新的包，还包括描述和路径
 
-npm-check -g 查看全局包状态
+#### npm-check -g 查看全局包状态
 
 #### npm-check -u 更新包
 
