@@ -10,20 +10,20 @@
 
 <p align="center"><b>客官</b></p>
 
-<p align="center">喜欢的请点右上角 `star`，订阅的请点`watch` 按钮。</p>
+<p align="center">喜欢的请点右上角 `star`，订阅的请点 `watch` 按钮。</p>
 
 
 ## 2018 
 
-> 纵然这世上万般不好，难道知识也不好么？
+*纵然这世上万般不好，难道知识也不好么？*
 
 ### 9月
 
-*我本人多么平庸，但我总觉得对你的爱很美。*
+> *我本人多么平庸，但我总觉得对你的爱很美。*
 
-* JavaScript, 基础知识 **»** [我觉得写的还蛮清楚的，JS数据类型转换从来都是一把梭](docs/basic/数据类型转换.md)
+* JavaScript, 基础知识 **»** [我觉得写的还蛮清楚的，JS数据类型转换从来都是一把梭](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/1)
 
-* JavaScript, 基础知识 **»** [通过实现bind的polyfill来考验下基础吧](docs/tiny/bind的polyfill.md)
+* JavaScript, 基础知识 **»** [通过分析call()原理实现bind的polyfill来考验下基础吧](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/2)
 
 * JavaScript, 进阶知识 **»** [以思维导图的方式列举ES6各大特性方便快速回顾](docs/es6/es6.md)
   
@@ -59,6 +59,6 @@
 
 ### 提高开发效率的小方面
 
-*如果你不珍惜我，那过了这个村，我在下个村等你。*
+> *如果你不珍惜我，那过了这个村，我在下个村等你。*
 
 * 插件 **»** [VSCode插件推荐 - npm命令管理](docs/tiny/npm命令与插件推荐.md)
