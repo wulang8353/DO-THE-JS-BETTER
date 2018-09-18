@@ -25,9 +25,9 @@
 
 * JavaScript, 基础知识 **»** [通过分析call()原理实现bind的polyfill来考验下基础吧](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/2)
 
-* JavaScript, 进阶知识 **»** [以思维导图的方式列举ES6各大特性方便快速回顾](docs/es6/es6.md)
+* JavaScript, 基础知识 **»** [以思维导图的方式列举ES6各大特性方便快速回顾](docs/es6/es6.md)
   
-* JavaScript, 进阶知识 **»** [JavaScript设计模式 - 基于面向对象的设计模式](docs/design-for-object/面向对象的理解.md)
+* JavaScript, 专题系列 **»** [JavaScript设计模式 - 基于面向对象的设计模式](docs/design-for-object/面向对象的理解.md)
 
   ###### | 创建型设计模式
   * javascript设计模式 **»** [工厂模式](docs/design-for-object/工厂模式.md)
