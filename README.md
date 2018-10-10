@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/creeperyang/blog">
+  <a href="https://github.com/wulang8353/DO-THE-JS-BETTER/issues">
   <img width="300" height="200" alt="creeperyang's blog" src="./img/logo.png">
   </a>
 </p>
