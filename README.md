@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/creeperyang/blog">
+  <a href="https://github.com/wulang8353/DO-THE-JS-BETTER/issues">
   <img width="300" height="200" alt="creeperyang's blog" src="./img/logo.png">
   </a>
 </p>
@@ -17,18 +17,27 @@
 
 *纵然这世上万般不好，难道知识也不好么？*
 
+### 10月
+
+> *结婚就像一场考试，本来各答各的相安无事，突然交卷的越来越多，就越来越慌。有些人准备充分，有些人草草收尾，你确定不再仔细检查检查 —— 长假见婚，电脑忘带*
+
+
 ### 9月
 
 > *我本人多么平庸，但我总觉得对你的爱很美。*
 
 * JavaScript, 基础知识 **»** [我觉得写的还蛮清楚的，JS数据类型转换从来都是一把梭](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/1)
 
+* JavaScript, 基础知识 **»** [以思维导图的方式列举ES6各大特性方便快速回顾](docs/es6/es6.md)
+
+* JavaScript, 进阶知识 **»** [`` 我是小王子 `` » JavaScript运行机制梳理](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/6)
+
+* JavaScript, 进阶知识 **»** [`` 你是小公主`` » 从url到页面加载完会发生什么呢](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/7)
+
 * JavaScript, 进阶知识 **»** [通过分析call()原理实现bind的polyfill来考验下基础吧](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/2)
-* 
+  
 * JavaScript, 进阶知识 **»** [我觉得别人写的蛮好的，防抖与节流傻傻分不清楚](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/4)
 
-* JavaScript, 基础知识 **»** [以思维导图的方式列举ES6各大特性方便快速回顾](docs/es6/es6.md)
-  
 * JavaScript, 专题系列 **»** [JavaScript设计模式 - 基于面向对象的设计模式](docs/design-for-object/面向对象的理解.md)
 
   ###### | 创建型设计模式
@@ -65,4 +74,4 @@
 
 * 插件 **»** [VSCode插件推荐 - npm高效插件](docs/tiny/VScode插件推荐.md)
 * 
-* 插件 **»** [VSCode插件推荐 - npm命令管理](docs/tiny/npm命令与插件推荐.md)
+* 插件 **»** [VSCode插件推荐 - npm命令管理](https://github.com/wulang8353/DO-THE-JS-BETTER/issues/5)
