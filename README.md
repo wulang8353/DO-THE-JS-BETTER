@@ -63,4 +63,6 @@
 
 > *如果你不珍惜我，那过了这个村，我在下个村等你。*
 
+* 插件 **»** [VSCode插件推荐 - npm高效插件](docs/tiny/VScode插件推荐.md)
+* 
 * 插件 **»** [VSCode插件推荐 - npm命令管理](docs/tiny/npm命令与插件推荐.md)
