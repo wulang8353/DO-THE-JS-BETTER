@@ -1,14 +1,31 @@
+- [文件上传加密](#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%A0%E5%AF%86)
+  - [1. XMLHttpRequest 与 ajax](#1-xmlhttprequest-%E4%B8%8E-ajax)
+    - [1.1 XMLHttpRequest 具体使用](#11-xmlhttprequest-%E5%85%B7%E4%BD%93%E4%BD%BF%E7%94%A8)
+    - [1.2 获取 response header](#12-%E8%8E%B7%E5%8F%96-response-header)
+    - [1.3 指定 response 的数据类型](#13-%E6%8C%87%E5%AE%9A-response-%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+    - [1.4 获取 response 数据](#14-%E8%8E%B7%E5%8F%96-response-%E6%95%B0%E6%8D%AE)
+    - [1.5 设置请求的超时时间](#15-%E8%AE%BE%E7%BD%AE%E8%AF%B7%E6%B1%82%E7%9A%84%E8%B6%85%E6%97%B6%E6%97%B6%E9%97%B4)
+    - [1.6 xhr.withCredentials 与 CORS](#16-xhrwithcredentials-%E4%B8%8E-cors)
+    - [1.7 xhr 相关事件](#17-xhr-%E7%9B%B8%E5%85%B3%E4%BA%8B%E4%BB%B6)
+  - [2. 前端数据加密](#2-%E5%89%8D%E7%AB%AF%E6%95%B0%E6%8D%AE%E5%8A%A0%E5%AF%86)
+    - [2.1 哈希加密与密钥加密](#21-%E5%93%88%E5%B8%8C%E5%8A%A0%E5%AF%86%E4%B8%8E%E5%AF%86%E9%92%A5%E5%8A%A0%E5%AF%86)
+    - [2.2 前端加密的意义](#22-%E5%89%8D%E7%AB%AF%E5%8A%A0%E5%AF%86%E7%9A%84%E6%84%8F%E4%B9%89)
+    - [2.3 如何加密](#23-%E5%A6%82%E4%BD%95%E5%8A%A0%E5%AF%86)
+      - [动态Salt加密过程:](#%E5%8A%A8%E6%80%81salt%E5%8A%A0%E5%AF%86%E8%BF%87%E7%A8%8B)
+  - [3. 代码实现](#3-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0)
+  - [4. 附录：ajax.js详细代码](#4-%E9%99%84%E5%BD%95ajaxjs%E8%AF%A6%E7%BB%86%E4%BB%A3%E7%A0%81)
+
 ## 文件上传加密
 
-前置知识：XMLHttpRequest、ajax、加密方式
+本文基于element-ui中的upload组件，从XMLHttpRequest、ajax，前端常见加密方式，代码实现三个方面，介绍如何通过修改上传函数实现对上传文件的加密功能。同时，由于文件对象会对内容进行base64编码，所以后端拿到数据后需要进行相应的解码。
 
-### XMLHttpRequest 与 ajax
+### 1. XMLHttpRequest 与 ajax
 
 ajax 是一种技术方案，其中核心的依赖是浏览器提供的 XMLHttpRequest 对象，浏览器通过该对象可以发出 HTTP 请求与响应。
 
 一句话总结：通过使用 XMLHttpRequest 对象发送一个 ajax 请求
 
-#### XMLHttpRequest 具体使用
+#### 1.1 XMLHttpRequest 具体使用
 
 简单来说创建一个 HTTP 请求的五个步骤：
 
@@ -74,7 +91,7 @@ function sendAjax() {
 }
 ```
 
-#### 获取 response header
+#### 1.2 获取 response header
 
 xhr 提供了 2 个用来获取响应头部的方法：getAllResponseHeaders 和 getResponseHeader(String)
 
@@ -94,7 +111,7 @@ xhr 提供了 2 个用来获取响应头部的方法：getAllResponseHeaders 和
 
 ![response1](./resLog.png)
 
-#### 指定 response 的数据类型
+#### 1.3 指定 response 的数据类型
 
 希望服务器返回的数据是想要的数据类型，比如：响应返回的数据是字符串，但我们期望最终通过 xhr.response 拿到的直接就是一个 json 对象
 
@@ -109,7 +126,6 @@ xhr.onload = function(e) {
     ...
   }
 };
-
 xhr.send();
 ```
 
@@ -124,7 +140,7 @@ xhr.send();
 | "blob"        | Blob 对象        |
 | "arrayBuffer" | ArrayBuffer 对象 |
 
-#### 获取 response 数据
+#### 1.4 获取 response 数据
 
 xhr提供了3个属性来获取请求返回的数据，分别是：**xhr.response**、**xhr.responseText**、**xhr.responseXML**
 
@@ -136,7 +152,7 @@ xhr提供了3个属性来获取请求返回的数据，分别是：**xhr.respons
 | xhr.responseText | ""     | 当responseType为String时，xhr对象上才有此属性，此时才能调用xhr.responseText，否则抛错            |
 | xhr.responseXML  | null   | 当responseType为String、"document"时，xhr对象上才有此属性，此时才能调用xhr.responseXML，否则抛错 |
 
-#### 设置请求的超时时间
+#### 1.5 设置请求的超时时间
 
 如果请求过了很久还没有成功，我们一般会主动终止请求。XMLHttpRequest提供了timeout属性来允许设置请求的超时时间
 
@@ -147,7 +163,7 @@ xhr提供了3个属性来获取请求返回的数据，分别是：**xhr.respons
 因为 xhr.open() 只是创建了一个连接，但并没有真正开始数据的传输，而xhr.send()才是真正开始了数据的传输过程。
 只有调用了 xhr.send()，才会触发 xhr.onloadstart
 
-#### xhr.withCredentials 与 CORS
+#### 1.6 xhr.withCredentials 与 CORS
 
 > 在发同域请求时，浏览器会将cookie自动加在request header中。但在发送跨域请求时，cookie则没有。
 
@@ -157,7 +173,7 @@ xhr提供了3个属性来获取请求返回的数据，分别是：**xhr.respons
 
 需要注意的是，如果要发送Cookie时，Access-Control-Allow-Origin就不能设为星号（接受任意域名的请求），必须指定明确的、与请求网页一致的域名
 
-#### xhr 相关事件
+#### 1.7 xhr 相关事件
 
 XMLHttpRequestEventTarget接口定义了7个事件：
 
@@ -203,7 +219,7 @@ XMLHttpRequest 和 XMLHttpRequestUpload 都继承了同一个 XMLHttpRequestEven
 搬文：
 [你真的会使用XMLHttpRequest吗？](https://segmentfault.com/a/1190000004322487#articleHeader10)
 
-### 前端数据加密
+### 2. 前端数据加密
 
 前端传输的数据一般有几种加密做法: 
 
@@ -219,7 +235,7 @@ js加密一般分为两种手段:
 
 严格来讲, 第一种方式并非加密而是一种信息摘要的过程.
 
-#### 哈希加密与密钥加密
+#### 2.1 哈希加密与密钥加密
 
 ![哈希加密](./哈希加密.png)
 
@@ -235,13 +251,13 @@ js加密一般分为两种手段:
   
   从性能上来说, 非对称加密相对于对称加密要慢很多. 在HTTPS中, 认证过程使用了非对称加密, 非认证过程使用了对称加密.
 
-#### 前端加密的意义
+#### 2.2 前端加密的意义
 
 在HTTP协议下, 数据是**明文传输**, 在传输过程中可以通过网络直接获取信息, 具有安全隐患; 另一方面在非加密的传输过程中，攻击者可更改数据或插入恶意的代码等。
 
 HTTPS 的诞生就是为了解决中间人攻击的问题. 但如果仍然使用 HTTP 协议, 前端加密的作用即**在数据发送前将数据进行哈希或使用公钥加密。如果数据被中间人获取，拿到的则不再是明文**.
 
-#### 如何加密
+#### 2.3 如何加密
 
 1、**哈希加密**
 
@@ -322,7 +338,7 @@ openssl rsa -in test.key -pubout -out test_public.pem
 
 **总结**: 在没有 https 的情况下，使用 JavaScript 非对称加密或者插件加密是比较好的替代方法
 
-### 代码实现
+### 3. 代码实现
 
 上传组件的代码如下，其中根据API可知，http-request属性可以覆盖默认的上传行为，自定义上传逻辑
 
@@ -439,7 +455,7 @@ function uploadCrypt (option, key) {
 }
 ```
 
-#### 附录：ajax.js详细代码
+### 4. 附录：ajax.js详细代码
 
 ```javascript
 import CryptoJS from 'crypto-js'
