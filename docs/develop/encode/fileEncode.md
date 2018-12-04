@@ -24,7 +24,7 @@ ajax 是一种技术方案，其中核心的依赖是浏览器提供的 XMLHttpR
 
 下面是一个使用 xhr 创建 HTTP 请求，发送表单数据的过程：
 
-```
+```javascript
 function sendAjax() {
   let formData;
   let xhr;
@@ -82,7 +82,7 @@ xhr 提供了 2 个用来获取响应头部的方法：getAllResponseHeaders 和
 
 但不包含 Set-Cookie，会报 Refused to get unsafe header "set-cookie" 错误
 
-```
+```javascript
   console.log(xhr.getAllResponseHeaders())
   console.log(xhr.getResponseHeader('Content-type'))
   console.log(xhr.getResponseHeader('set-cookie'))
@@ -98,7 +98,7 @@ xhr 提供了 2 个用来获取响应头部的方法：getAllResponseHeaders 和
 
 希望服务器返回的数据是想要的数据类型，比如：响应返回的数据是字符串，但我们期望最终通过 xhr.response 拿到的直接就是一个 json 对象
 
-```
+```javascript
 var xhr = new XMLHttpRequest();
 xhr.open('GET', '/path/getInfo', true);
 xhr.responseType = 'json';
@@ -112,6 +112,7 @@ xhr.onload = function(e) {
 
 xhr.send();
 ```
+
 下表是responseType可以设置的格式
 
 | 值            | xhr.response     | 数据类型                         | 说明                             |
@@ -294,7 +295,7 @@ js哈希加密保证了密码在传输过程中的资料安全, 因为验证码�
 
 思路: 拿到公钥和私钥.  利用公钥RSA加密, 私钥解密
 
-```
+```javascript
 1 创建密钥对JKS格式keystore：
 keytool -genkey -v -alias test -keyalg RSA -keystore test.jks
 
@@ -311,7 +312,7 @@ openssl rsa -in test.key -pubout -out test_public.pem
 
 拿到公钥test_public.pem后，在cat test_public.pem查看这个公钥内容，内容是base64格式的
 
-```
+```javascript
   const jse  = new JSEncrypt() // 创建该对象
 
   jsencrypt.setPublicKey(this.publicKey)  // 设置公钥
@@ -325,11 +326,12 @@ openssl rsa -in test.key -pubout -out test_public.pem
 
 上传组件的代码如下，其中根据API可知，http-request属性可以覆盖默认的上传行为，自定义上传逻辑
 
-```
+```html 
 <el-upload :action="file.action" ref="upload" :data="file.data" :before-upload="importReadyUploadFileName" :on-success="importReadyUploadSuccess" :on-error="importReadyUploadFail" :show-file-list="false" :http-request="httpRequest" :disabled="file.disabled">
    <span style="color: #666; width: 56px;display: inline-block;font-weight:bold;">选择</span>
 </el-upload>
-
+```
+```javascript
 httpRequest (option) {
   // options 该Vue组件，属性自有; this.publicKey 后端传递的公钥
   uploadCrypt(option, this.publicKey)
@@ -345,7 +347,7 @@ uploadCrypt就是要替换的上传函数，这个地方涉及到**对称加密*
 
 函数中采用了对称加密插件[crypto-js](https://github.com/brix/crypto-js)和非对称加密插件[jsencrypt](https://github.com/travist/jsencrypt)进行加密解密。
 
-```
+```javascript
 function uploadCrypt (option, key) {
   if (typeof XMLHttpRequest === 'undefined') {
     return
@@ -437,9 +439,9 @@ function uploadCrypt (option, key) {
 }
 ```
 
-#### ajax.js详细代码
+#### 附录：ajax.js详细代码
 
-```
+```javascript
 import CryptoJS from 'crypto-js'
 import JSEncrypt from 'jsencrypt/bin/jsencrypt'
 
